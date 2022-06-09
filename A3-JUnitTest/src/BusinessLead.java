@@ -32,7 +32,7 @@ public class BusinessLead extends BusinessEmployee{
 
     public boolean approveBonus(Employee e, double bonus){
         for (int i = 0; i < this.team.size(); i++){
-            if(team.get(i).getTeamSupported().equals(e.manager)){
+            if(team.get(i).getTeamSupported().equals(e.manager) && team.get(i).approveBonus(bonus)){
                 e.bonus += bonus;
                 team.get(i).bonusBudget -= bonus;
                 return true;
